@@ -614,71 +614,6 @@ footer {
           margin: 10px; }
           .pageBody-contactUs .contactUs .info-form form input::placeholder {
             color: #525252; }
-        .pageBody-contactUs .contactUs .info-form form .LanguageLevel {
-          display: flex;
-          flex-direction: row;
-          width: 100%;
-          align-items: center; }
-          .pageBody-contactUs .contactUs .info-form form .LanguageLevel input[type="number"] {
-            width: 10%; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel input[type="number"]::-webkit-inner-spin-button {
-              -webkit-appearance: none; }
-          .pageBody-contactUs .contactUs .info-form form .LanguageLevel .radioInputs {
-            width: 81.5%;
-            border-radius: 0.4rem;
-            display: flex;
-            justify-content: center;
-            border: 1px solid #113e13;
-            padding: 10px 0; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .radioInputs > span {
-              color: #113e13;
-              font-size: 12px; }
-          .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container {
-            display: block;
-            position: relative;
-            cursor: pointer;
-            font-size: 22px;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            display: flex;
-            align-items: center; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container span {
-              font-size: 12px;
-              margin-right: 1rem;
-              color: #007a33; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container input {
-              opacity: 0;
-              cursor: pointer;
-              position: absolute; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container .checkmark {
-              display: inline-block;
-              top: 0;
-              left: -3px;
-              height: 20px;
-              width: 20px;
-              background-color: #eee;
-              border-radius: 50%;
-              position: relative; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container:hover input ~ .checkmark {
-              background-color: #ccc; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container input:checked ~ .checkmark {
-              border: 1px solid darkgreen; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container .checkmark:after {
-              content: "";
-              position: absolute;
-              display: none; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container input:checked ~ .checkmark:after {
-              display: block; }
-            .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container .checkmark:after {
-              top: 10%;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 15px;
-              height: 15px;
-              border-radius: 50%;
-              background: darkgreen; }
         .pageBody-contactUs .contactUs .info-form form textarea {
           border: 1px solid #d6d6d6;
           padding: 10px;
@@ -714,6 +649,72 @@ footer {
           background: url(../../Imgs/Icon/call-calling.png) center no-repeat; }
         .pageBody-contactUs .contactUs .info-form .info-contactUs .mail::after {
           background: url(../../Imgs/Icon/direct-send.png) center no-repeat; }
+
+.LanguageLevel {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center; }
+  .LanguageLevel input[type="number"] {
+    width: 10%; }
+    .LanguageLevel input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none; }
+  .LanguageLevel .radioInputs {
+    width: 81.5%;
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #113e13;
+    padding: 10px 0; }
+    .LanguageLevel .radioInputs > span {
+      color: #113e13;
+      font-size: 12px; }
+  .LanguageLevel .container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    align-items: center; }
+    .LanguageLevel .container span {
+      font-size: 12px;
+      margin-right: 1rem;
+      color: #007a33; }
+    .LanguageLevel .container input {
+      opacity: 0;
+      cursor: pointer;
+      position: absolute; }
+    .LanguageLevel .container .checkmark {
+      display: inline-block;
+      top: 0;
+      left: -3px;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+      border-radius: 50%;
+      position: relative; }
+    .LanguageLevel .container:hover input ~ .checkmark {
+      background-color: #ccc; }
+    .LanguageLevel .container input:checked ~ .checkmark {
+      border: 1px solid darkgreen; }
+    .LanguageLevel .container .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none; }
+    .LanguageLevel .container input:checked ~ .checkmark:after {
+      display: block; }
+    .LanguageLevel .container .checkmark:after {
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: darkgreen; }
 
 .pageBody-abouUs {
   max-width: 80%;
@@ -1195,6 +1196,164 @@ footer {
         width: fit-content;
         margin: 10px auto;
         border-radius: 0.7rem; }
+
+.pageBody-detail-product {
+  padding: 2rem 4rem;
+  display: flex; }
+  .pageBody-detail-product .product-datil {
+    width: 60%;
+    display: inline-block; }
+    .pageBody-detail-product .product-datil .session {
+      width: 100%;
+      display: flex;
+      flex-direction: column; }
+      .pageBody-detail-product .product-datil .session h2 {
+        width: 100%;
+        background-color: #007a33;
+        text-align: center;
+        color: #fff; }
+      .pageBody-detail-product .product-datil .session .session-number {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px; }
+    .pageBody-detail-product .product-datil .play-video {
+      width: 100%;
+      display: inline-block;
+      position: relative; }
+      .pageBody-detail-product .product-datil .play-video button {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%; }
+  .pageBody-detail-product .shop-box {
+    width: 39%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .pageBody-detail-product .shop-box .course-date {
+      display: flex;
+      flex-direction: column; }
+      .pageBody-detail-product .shop-box .course-date span {
+        display: inline-block; }
+    .pageBody-detail-product .shop-box h2 {
+      text-align: center; }
+  .pageBody-detail-product .box-shop-detail div span {
+    text-align: center;
+    display: block; }
+  .pageBody-detail-product .box-shop-detail .select-price .LanguageLevel .radioInputs {
+    width: 100%; }
+
+.pagebody-cart {
+  padding: 2rem 4rem; }
+  .pagebody-cart h2 {
+    text-align: center; }
+  .pagebody-cart .grid-item-add-toCart {
+    display: flex; }
+    .pagebody-cart .grid-item-add-toCart .item-add-toCart {
+      display: flex;
+      padding: 10px;
+      width: 25rem; }
+      .pagebody-cart .grid-item-add-toCart .item-add-toCart .img-item {
+        width: 20%;
+        display: inline-block; }
+      .pagebody-cart .grid-item-add-toCart .item-add-toCart .title-product {
+        width: 79%;
+        display: flex;
+        flex-direction: column; }
+      .pagebody-cart .grid-item-add-toCart .item-add-toCart .info-product {
+        padding-right: 10px; }
+  .pagebody-cart .lastLevelPay {
+    display: flex;
+    height: 30rem;
+    justify-content: center;
+    align-items: center; }
+    .pagebody-cart .lastLevelPay .PayBox {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    .pagebody-cart .lastLevelPay .shop-box {
+      width: 40%; }
+
+.pageBody-Consultation {
+  padding: 2rem 4rem; }
+  .pageBody-Consultation h2 {
+    text-align: center; }
+  .pageBody-Consultation .Consultation-req h2 {
+    text-align: right; }
+  .pageBody-Consultation .Consultation-req .Consultation-req-grid {
+    display: flex;
+    justify-content: space-evenly; }
+  .pageBody-Consultation .Consultation-req .Consultation-req-item {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 1px solid #d6d6d6;
+    border-radius: 0.7rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 1rem; }
+    .pageBody-Consultation .Consultation-req .Consultation-req-item:hover {
+      background-color: #007a33;
+      border: none;
+      transition: all 0.3s; }
+      .pageBody-Consultation .Consultation-req .Consultation-req-item:hover span {
+        color: white; }
+    .pageBody-Consultation .Consultation-req .Consultation-req-item span {
+      text-align: center;
+      margin-top: 5px;
+      color: #113e13; }
+  .pageBody-Consultation .Consultation-date {
+    margin-top: 2rem; }
+    .pageBody-Consultation .Consultation-date h2 {
+      text-align: right; }
+    .pageBody-Consultation .Consultation-date .box-date-grid {
+      display: flex;
+      flex-direction: column;
+      height: 20rem;
+      width: 80%;
+      margin: auto;
+      overflow-x: hidden;
+      padding: 0 2rem; }
+      .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item {
+        width: 100%;
+        margin-top: 2rem; }
+        .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .header-item {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #d6d6d6; }
+        .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid {
+          display: flex;
+          justify-content: space-around; }
+          .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .box-date-day {
+            border: 1px solid #d6d6d6;
+            padding: 10px;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 0.7rem;
+            cursor: pointer; }
+            .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .box-date-day:hover {
+              background-color: #007a33; }
+              .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .box-date-day:hover span {
+                color: #fff; }
+          .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .active-date-day {
+            border: 1px solid #007a33; }
+            .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .active-date-day span {
+              color: #007a33; }
+    .pageBody-Consultation .Consultation-date .Reservation-Consultation {
+      width: 100%;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center; }
+      .pageBody-Consultation .Consultation-date .Reservation-Consultation button {
+        border-radius: 0.7rem;
+        background-color: #d82535;
+        color: #fff;
+        padding: 1rem 4rem;
+        border: none; }
 
 @media (max-width: 1300px) and (min-width: 1024px) {
   .header-banner .Banner-HomePage .iranHuman {

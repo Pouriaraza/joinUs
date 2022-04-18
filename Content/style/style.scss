@@ -791,85 +791,7 @@ footer {
                         color: rgb(82, 82, 82);
                     }
                 }
-                .LanguageLevel {
-                    display: flex;
-                    flex-direction: row;
-                    width: 100%;
-                    align-items: center;
-                    input[type="number"] {
-                        width: 10%;
-                        &::-webkit-inner-spin-button {
-                            -webkit-appearance: none;
-                        }
-                    }
-                    .radioInputs {
-                        width: 81.5%;
-                        border-radius: 0.4rem;
-                        display: flex;
-                        justify-content: center;
-                        border: 1px solid #113e13;
-                        padding: 10px 0;
-                        > span {
-                            color: $DarkGreen;
-                            font-size: 12px;
-                        }
-                    }
-                    .container {
-                        display: block;
-                        position: relative;
-                        cursor: pointer;
-                        font-size: 22px;
-                        -webkit-user-select: none;
-                        -moz-user-select: none;
-                        -ms-user-select: none;
-                        user-select: none;
-                        display: flex;
-                        align-items: center;
-                        span {
-                            font-size: 12px;
-                            margin-right: 1rem;
-                            color: $LightGreen;
-                        }
-                        input {
-                            opacity: 0;
-                            cursor: pointer;
-                            position: absolute;
-                        }
-                        .checkmark {
-                            display: inline-block;
-                            top: 0;
-                            left: -3px;
-                            height: 20px;
-                            width: 20px;
-                            background-color: #eee;
-                            border-radius: 50%;
-                            position: relative;
-                        }
-                        &:hover input ~ .checkmark {
-                            background-color: #ccc;
-                        }
-                        input:checked ~ .checkmark {
-                            border: 1px solid darkgreen;
-                        }
-                        .checkmark:after {
-                            content: "";
-                            position: absolute;
-                            display: none;
-                        }
-                        input:checked ~ .checkmark:after {
-                            display: block;
-                        }
-                        .checkmark:after {
-                            top: 10%;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 15px;
-                            height: 15px;
-                            border-radius: 50%;
-                            background: darkgreen;
-                        }
-                    }
-                }
+
                 textarea {
                     border: 1px solid #d6d6d6;
                     padding: 10px;
@@ -914,6 +836,85 @@ footer {
                     background: url(../../Imgs/Icon/direct-send.png) center no-repeat;
                 }
             }
+        }
+    }
+}
+.LanguageLevel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    input[type="number"] {
+        width: 10%;
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+    .radioInputs {
+        width: 81.5%;
+        border-radius: 0.4rem;
+        display: flex;
+        justify-content: center;
+        border: 1px solid #113e13;
+        padding: 10px 0;
+        > span {
+            color: $DarkGreen;
+            font-size: 12px;
+        }
+    }
+    .container {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        span {
+            font-size: 12px;
+            margin-right: 1rem;
+            color: $LightGreen;
+        }
+        input {
+            opacity: 0;
+            cursor: pointer;
+            position: absolute;
+        }
+        .checkmark {
+            display: inline-block;
+            top: 0;
+            left: -3px;
+            height: 20px;
+            width: 20px;
+            background-color: #eee;
+            border-radius: 50%;
+            position: relative;
+        }
+        &:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        input:checked ~ .checkmark {
+            border: 1px solid darkgreen;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .checkmark:after {
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: darkgreen;
         }
     }
 }
@@ -1534,6 +1535,225 @@ footer {
                 width: fit-content;
                 margin: 10px auto;
                 border-radius: 0.7rem;
+            }
+        }
+    }
+}
+
+.pageBody-detail-product {
+    padding: 2rem 4rem;
+    display: flex;
+    .product-datil {
+        width: 60%;
+        display: inline-block;
+        .session {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                width: 100%;
+                background-color: $LightGreen;
+                text-align: center;
+                color: $white;
+            }
+            .session-number {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+        }
+        .detailProduct {
+        }
+        .play-video {
+            width: 100%;
+            display: inline-block;
+            position: relative;
+            button {
+                position: absolute;
+                @include centerPosition();
+                top: 50%;
+            }
+        }
+    }
+
+    .shop-box {
+        width: 39%;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        .course-date {
+            display: flex;
+            flex-direction: column;
+            span {
+                display: inline-block;
+            }
+        }
+        h2 {
+            text-align: center;
+        }
+    }
+    .box-shop-detail {
+        div span {
+            text-align: center;
+            display: block;
+        }
+        .select-price {
+            .LanguageLevel {
+                .radioInputs {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.pagebody-cart {
+    padding: 2rem 4rem;
+    h2 {
+        text-align: center;
+    }
+    .grid-item-add-toCart {
+        display: flex;
+        .item-add-toCart {
+            display: flex;
+            padding: 10px;
+            width: 25rem;
+            .img-item {
+                width: 20%;
+                display: inline-block;
+            }
+            .title-product {
+                width: 79%;
+                display: flex;
+                flex-direction: column;
+            }
+            .info-product {
+                padding-right: 10px;
+            }
+        }
+        .lastLevelPay {
+            .pay {
+                .price-cart {
+                }
+            }
+        }
+    }
+    .lastLevelPay {
+        display: flex;
+        height: 30rem;
+        justify-content: center;
+        align-items: center;
+        .PayBox {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .shop-box {
+            width: 40%;
+        }
+    }
+}
+
+.pageBody-Consultation {
+    padding: 2rem 4rem;
+    h2 {
+        text-align: center;
+    }
+    .Consultation-req {
+        h2 {
+            text-align: right;
+        }
+        .Consultation-req-grid {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .Consultation-req-item {
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            border: 1px solid $border-gray;
+            border-radius: 0.7rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            padding: 1rem;
+            &:hover {
+                background-color: $LightGreen;
+                border: none;
+                transition: all 0.3s;
+                span {
+                    color: white;
+                }
+            }
+            span {
+                text-align: center;
+                margin-top: 5px;
+                color: $DarkGreen;
+            }
+        }
+    }
+    .Consultation-date {
+        margin-top: 2rem;
+        h2 {
+            text-align: right;
+        }
+        .box-date-grid {
+            display: flex;
+            flex-direction: column;
+            height: 20rem;
+            width: 80%;
+            margin: auto;
+            overflow-x: hidden;
+            padding: 0 2rem;
+            // direction: ltr;
+            .box-date-item {
+                width: 100%;
+                margin-top: 2rem;
+                .header-item {
+                    display: flex;
+                    justify-content: space-between;
+                    border-bottom: 1px solid $border-gray;
+                }
+                .date-box-day-grid {
+                    display: flex;
+                    justify-content: space-around;
+                    .box-date-day {
+                        border: 1px solid $border-gray;
+                        padding: 10px;
+                        text-align: center;
+                        margin-top: 10px;
+                        border-radius: 0.7rem;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $LightGreen;
+                            span {
+                                color: $white;
+                            }
+                        }
+                    }
+                    .active-date-day {
+                        border: 1px solid $LightGreen;
+                        span {
+                            color: $LightGreen;
+                        }
+                    }
+                }
+            }
+        }
+        .Reservation-Consultation {
+            width: 100%;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            button {
+                border-radius: 0.7rem;
+                background-color: $Red;
+                color: $white;
+                padding: 1rem 4rem;
+                border: none;
             }
         }
     }
