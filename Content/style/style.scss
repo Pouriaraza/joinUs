@@ -1543,36 +1543,70 @@ footer {
 .pageBody-detail-product {
     padding: 2rem 4rem;
     display: flex;
+    .box-shop-detail {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid $border-gray;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        padding: 1rem 0;
+    }
     .product-datil {
         width: 60%;
         display: inline-block;
+        .detailProduct{
+            .title{
+                padding: 1rem;
+            }
+            p{
+                padding: 1rem;
+            }
+        }
         .session {
             width: 100%;
             display: flex;
             flex-direction: column;
+            border-top: none;
+            border-radius: 0.7rem;
+            border: 1px solid #d6d6d6;
+            border-bottom-left-radius: 0.7rem;
+            border-bottom-right-radius: 0.7rem;
             h2 {
                 width: 100%;
-                background-color: $LightGreen;
                 text-align: center;
                 color: $white;
+                background-color: $LightGreen;
+                border-top-left-radius: 0.7rem;
+                border-top-right-radius: 0.7rem;
             }
             .session-number {
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                 margin-top: 10px;
+                padding: 0 1rem;
             }
-        }
-        .detailProduct {
         }
         .play-video {
             width: 100%;
             display: inline-block;
             position: relative;
+            width: auto;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img {
+                border-radius: 0.7rem;
+            }
             button {
                 position: absolute;
                 @include centerPosition();
-                top: 50%;
+                top: 35%;
+                color: white;
             }
         }
     }
@@ -1581,11 +1615,62 @@ footer {
         width: 39%;
         display: inline-flex;
         flex-direction: column;
-        justify-content: space-around;
         align-items: center;
+        padding: 10px 1rem;
+
         .course-date {
+            border-radius: 0.7rem;
+            border: 1px solid $border-gray;
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+        .title {
+            width: 100%;
+            background-color: #007a33;
+            border-top-left-radius: 0.7rem;
+            border-top-right-radius: 0.7rem;
+            color: #fff;
+        }
+        .product-name {
+            span:first-child {
+                color: #d6d6d6;
+            }
+            display: block;
+            color: #007a33;
+        }
+        .price-product {
+            display: block;
+            color: #007a33;
+            span:first-child {
+                color: #d6d6d6;
+            }
+        }
+        .add-to-cart {
+            border-radius: 0.7rem;
+            background-color: $Red;
+            color: $white;
+            padding: 1rem 4rem;
+            border: none;
+        }
+        .select-price .radioInputs {
+            border: none;
+        }
+        .course-date {
+            width: 100%;
             display: flex;
             flex-direction: column;
+            > div {
+                padding: 1rem 0;
+            }
+            .course-time,
+            .date-course {
+                span:first-child {
+                    color: #d6d6d6;
+                }
+                span {
+                    color: bl;
+                }
+            }
             span {
                 display: inline-block;
             }
@@ -1613,6 +1698,7 @@ footer {
     padding: 2rem 4rem;
     h2 {
         text-align: center;
+        padding: 2rem 0;
     }
     .grid-grid-add-toCart {
         display: flex;
@@ -1649,7 +1735,10 @@ footer {
         display: flex;
         align-items: flex-start;
         margin-top: 2rem;
+        height: 25rem;
+        padding-top: 2rem;
         justify-content: center;
+        align-items: flex-end;
         border-top: 2px solid $border-gray;
         .PayBox {
             width: 70%;
@@ -1663,6 +1752,9 @@ footer {
             padding: 1rem;
             height: 100%;
             margin-bottom: 0;
+            > p {
+                padding-bottom: 1rem;
+            }
             .price {
                 font-family: $bold;
                 color: $LightGreen;
@@ -1679,9 +1771,9 @@ footer {
                     border: 1px solid $border-gray;
                     padding: 10px;
                     border-radius: 0.5rem;
+                    border-left: none;
                 }
                 .submit-offer {
-                    position: absolute;
                     border: none;
                     height: 99%;
                     border-radius: 0.5rem;
@@ -1740,7 +1832,7 @@ footer {
                 border-bottom-left-radius: 0.7rem;
                 border-bottom-right-radius: 0.7rem;
                 height: 100%;
-                >div{
+                > div {
                     padding-top: 1rem;
                 }
                 .product-name {
@@ -1768,7 +1860,7 @@ footer {
                         }
                     }
                 }
-                .add-to-cart{
+                .add-to-cart {
                     border: none;
                     background-color: $Red;
                     color: #fff;
@@ -1845,13 +1937,34 @@ footer {
                     display: flex;
                     justify-content: space-between;
                     border-bottom: 1px solid $border-gray;
+                    align-items: center;
+                    span:first-child {
+                        position: relative;
+                        &::before {
+                            content: "";
+                            width: 2rem;
+                            height: 2rem;
+                            display: block;
+                            position: absolute;
+                            right: -2rem;
+                            background: url(../../Imgs/calendar.png) center no-repeat;
+                            background-size: 1.2rem;
+                        }
+                    }
+                    .full {
+                        color: $Red;
+                        border: 1px solid $Red;
+                        padding: 5px 10px;
+                        border-radius: 0.7rem;
+                        margin: 5px;
+                    }
                 }
                 .date-box-day-grid {
                     display: flex;
                     justify-content: space-around;
                     .box-date-day {
                         border: 1px solid $border-gray;
-                        padding: 10px;
+                        padding: 10px 3rem;
                         text-align: center;
                         margin-top: 10px;
                         border-radius: 0.7rem;
@@ -2341,6 +2454,164 @@ footer {
             }
         }
     }
+
+    .pagebody-cart {
+        .grid-grid-add-toCart {
+            .item-add-toCart {
+                flex-direction: column;
+                .img-item {
+                    width: 100%;
+                }
+                .info-product {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+        .lastLevelPay {
+            flex-direction: column;
+            height: auto;
+            .PayBox {
+                width: 100%;
+            }
+            .shop-box {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    }
+
+    footer .footer .footer-item:nth-child(1)::after,
+    footer .footer::after {
+        display: none !important;
+    }
+
+    .pageBody-Consultation {
+        padding: 0rem 2rem;
+        .Consultation-req {
+            .Consultation-req-grid {
+                flex-wrap: wrap;
+            }
+            .Consultation-req-item {
+                margin: 10px;
+            }
+        }
+        .Consultation-date {
+            .box-date-grid {
+                width: 100%;
+                .box-date-item {
+                    .date-box-day-grid {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+
+    .pageBody-detail-product {
+        padding: 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        .box-shop-detail {
+
+                }
+        .product-datil {
+            width: 100%;
+            .detailProduct{
+                // .title{
+                //     padding: 1rem;
+                // }
+                // p{
+                //     padding: 1rem;
+                // }
+            }
+            .session {
+                h2 {
+                }
+                .session-number {
+                }
+            }
+            // .play-video {
+            //     img {
+            //         border-radius: 0.7rem;
+            //     }
+            //     button {
+            //         position: absolute;
+            //         @include centerPosition();
+            //         top: 35%;
+            //         color: white;
+            //     }
+            // }
+        }
+    
+        .shop-box {
+            width: 100%;
+            .course-date {
+            }
+            .title {
+            }
+            // .product-name {
+            //     span:first-child {
+            //         color: #d6d6d6;
+            //     }
+            //     display: block;
+            //     color: #007a33;
+            // }
+            // .price-product {
+            //     display: block;
+            //     color: #007a33;
+            //     span:first-child {
+            //         color: #d6d6d6;
+            //     }
+            // }
+            // .add-to-cart {
+            //     border-radius: 0.7rem;
+            //     background-color: $Red;
+            //     color: $white;
+            //     padding: 1rem 4rem;
+            //     border: none;
+            // }
+            // .select-price .radioInputs {
+            //     border: none;
+            // }
+            // .course-date {
+            //     width: 100%;
+            //     display: flex;
+            //     flex-direction: column;
+            //     > div {
+            //         padding: 1rem 0;
+            //     }
+            //     .course-time,
+            //     .date-course {
+            //         span:first-child {
+            //             color: #d6d6d6;
+            //         }
+            //         span {
+            //             color: bl;
+            //         }
+            //     }
+            //     span {
+            //         display: inline-block;
+            //     }
+            // }
+            // h2 {
+            //     text-align: center;
+            // }
+        }
+        .box-shop-detail {
+            div span {
+                text-align: center;
+                display: block;
+            }
+            .select-price {
+                .LanguageLevel {
+                    .radioInputs {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1024px) {
@@ -2710,6 +2981,76 @@ footer {
             float: none;
         }
     }
+
+    .pagebody-cart {
+        padding: 0rem 2rem;
+        h2 {
+        }
+        .grid-grid-add-toCart {
+            .item-add-toCart {
+                .img-item {
+                }
+                .info-product {
+                }
+            }
+        }
+        .lastLevelPay {
+            .PayBox {
+                .offerInput {
+                    input {
+                    }
+                    .submit-offer {
+                    }
+                }
+                .select-bank {
+                    .grid-select-back {
+                        button {
+                            img {
+                            }
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+                > div {
+                }
+                .Confirmation,
+                p {
+                    // margin-top: 1rem;
+                }
+                .Confirmation {
+                }
+            }
+            .shop-box {
+                .box-shop-detail {
+                    > div {
+                    }
+                    .product-name {
+                        span:first-child {
+                        }
+                        .product-name-item {
+                        }
+                    }
+                    .price-product {
+                        span:first-child {
+                        }
+                        span {
+                        }
+                    }
+                    .select-price {
+                        .LanguageLevel {
+                            .radioInputs {
+                            }
+                        }
+                    }
+                    .add-to-cart {
+                    }
+                }
+                .title {
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 480px) {
@@ -2944,6 +3285,36 @@ footer {
             // width: 100%;
             .category-item {
                 width: 100%;
+            }
+        }
+    }
+
+    .pagebody-cart {
+        padding: 0rem 1rem;
+        .grid-grid-add-toCart {
+            flex-direction: column;
+            .item-add-toCart {
+                margin-top: 2rem;
+                width: auto;
+                .title-product {
+                    width: 100%;
+                }
+            }
+        }
+        .lastLevelPay {
+            .PayBox {
+                padding: 0;
+                .price {
+                    font-size: 1rem;
+                }
+                .offerInput {
+                    input {
+                        width: auto;
+                    }
+                    .submit-offer {
+                        padding: 10px 1rem;
+                    }
+                }
             }
         }
     }

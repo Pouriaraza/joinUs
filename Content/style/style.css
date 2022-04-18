@@ -1200,41 +1200,109 @@ footer {
 .pageBody-detail-product {
   padding: 2rem 4rem;
   display: flex; }
+  .pageBody-detail-product .box-shop-detail {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #d6d6d6;
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
+    padding: 1rem 0; }
   .pageBody-detail-product .product-datil {
     width: 60%;
     display: inline-block; }
+    .pageBody-detail-product .product-datil .detailProduct .title {
+      padding: 1rem; }
+    .pageBody-detail-product .product-datil .detailProduct p {
+      padding: 1rem; }
     .pageBody-detail-product .product-datil .session {
       width: 100%;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      border-top: none;
+      border-radius: 0.7rem;
+      border: 1px solid #d6d6d6;
+      border-bottom-left-radius: 0.7rem;
+      border-bottom-right-radius: 0.7rem; }
       .pageBody-detail-product .product-datil .session h2 {
         width: 100%;
-        background-color: #007a33;
         text-align: center;
-        color: #fff; }
+        color: #fff;
+        background-color: #007a33;
+        border-top-left-radius: 0.7rem;
+        border-top-right-radius: 0.7rem; }
       .pageBody-detail-product .product-datil .session .session-number {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-top: 10px; }
+        margin-top: 10px;
+        padding: 0 1rem; }
     .pageBody-detail-product .product-datil .play-video {
       width: 100%;
       display: inline-block;
-      position: relative; }
+      position: relative;
+      width: auto;
+      background-color: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .pageBody-detail-product .product-datil .play-video img {
+        border-radius: 0.7rem; }
       .pageBody-detail-product .product-datil .play-video button {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 50%; }
+        top: 35%;
+        color: white; }
   .pageBody-detail-product .shop-box {
     width: 39%;
     display: inline-flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center; }
+    align-items: center;
+    padding: 10px 1rem; }
     .pageBody-detail-product .shop-box .course-date {
+      border-radius: 0.7rem;
+      border: 1px solid #d6d6d6;
+      margin-top: 1rem;
+      padding: 0 1rem; }
+    .pageBody-detail-product .shop-box .title {
+      width: 100%;
+      background-color: #007a33;
+      border-top-left-radius: 0.7rem;
+      border-top-right-radius: 0.7rem;
+      color: #fff; }
+    .pageBody-detail-product .shop-box .product-name {
+      display: block;
+      color: #007a33; }
+      .pageBody-detail-product .shop-box .product-name span:first-child {
+        color: #d6d6d6; }
+    .pageBody-detail-product .shop-box .price-product {
+      display: block;
+      color: #007a33; }
+      .pageBody-detail-product .shop-box .price-product span:first-child {
+        color: #d6d6d6; }
+    .pageBody-detail-product .shop-box .add-to-cart {
+      border-radius: 0.7rem;
+      background-color: #d82535;
+      color: #fff;
+      padding: 1rem 4rem;
+      border: none; }
+    .pageBody-detail-product .shop-box .select-price .radioInputs {
+      border: none; }
+    .pageBody-detail-product .shop-box .course-date {
+      width: 100%;
       display: flex;
       flex-direction: column; }
+      .pageBody-detail-product .shop-box .course-date > div {
+        padding: 1rem 0; }
+      .pageBody-detail-product .shop-box .course-date .course-time span:first-child,
+      .pageBody-detail-product .shop-box .course-date .date-course span:first-child {
+        color: #d6d6d6; }
+      .pageBody-detail-product .shop-box .course-date .course-time span,
+      .pageBody-detail-product .shop-box .course-date .date-course span {
+        color: bl; }
       .pageBody-detail-product .shop-box .course-date span {
         display: inline-block; }
     .pageBody-detail-product .shop-box h2 {
@@ -1248,7 +1316,8 @@ footer {
 .pagebody-cart {
   padding: 2rem 4rem; }
   .pagebody-cart h2 {
-    text-align: center; }
+    text-align: center;
+    padding: 2rem 0; }
   .pagebody-cart .grid-grid-add-toCart {
     display: flex; }
     .pagebody-cart .grid-grid-add-toCart .item-add-toCart {
@@ -1278,7 +1347,10 @@ footer {
     display: flex;
     align-items: flex-start;
     margin-top: 2rem;
+    height: 25rem;
+    padding-top: 2rem;
     justify-content: center;
+    align-items: flex-end;
     border-top: 2px solid #d6d6d6; }
     .pagebody-cart .lastLevelPay .PayBox {
       width: 70%;
@@ -1292,6 +1364,8 @@ footer {
       padding: 1rem;
       height: 100%;
       margin-bottom: 0; }
+      .pagebody-cart .lastLevelPay .PayBox > p {
+        padding-bottom: 1rem; }
       .pagebody-cart .lastLevelPay .PayBox .price {
         font-family: IRANYekanB;
         color: #007a33;
@@ -1305,9 +1379,9 @@ footer {
           width: 20rem;
           border: 1px solid #d6d6d6;
           padding: 10px;
-          border-radius: 0.5rem; }
+          border-radius: 0.5rem;
+          border-left: none; }
         .pagebody-cart .lastLevelPay .PayBox .offerInput .submit-offer {
-          position: absolute;
           border: none;
           height: 99%;
           border-radius: 0.5rem;
@@ -1427,13 +1501,31 @@ footer {
         .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .header-item {
           display: flex;
           justify-content: space-between;
-          border-bottom: 1px solid #d6d6d6; }
+          border-bottom: 1px solid #d6d6d6;
+          align-items: center; }
+          .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .header-item span:first-child {
+            position: relative; }
+            .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .header-item span:first-child::before {
+              content: "";
+              width: 2rem;
+              height: 2rem;
+              display: block;
+              position: absolute;
+              right: -2rem;
+              background: url(../../Imgs/calendar.png) center no-repeat;
+              background-size: 1.2rem; }
+          .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .header-item .full {
+            color: #d82535;
+            border: 1px solid #d82535;
+            padding: 5px 10px;
+            border-radius: 0.7rem;
+            margin: 5px; }
         .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid {
           display: flex;
           justify-content: space-around; }
           .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid .box-date-day {
             border: 1px solid #d6d6d6;
-            padding: 10px;
+            padding: 10px 3rem;
             text-align: center;
             margin-top: 10px;
             border-radius: 0.7rem;
@@ -1773,7 +1865,52 @@ footer {
         .pageBody-category .category-grid .category-item span {
           margin-top: 10px; }
         .pageBody-category .category-grid .category-item a {
-          padding: 5px 1rem; } }
+          padding: 5px 1rem; }
+
+  .pagebody-cart .grid-grid-add-toCart .item-add-toCart {
+    flex-direction: column; }
+    .pagebody-cart .grid-grid-add-toCart .item-add-toCart .img-item {
+      width: 100%; }
+    .pagebody-cart .grid-grid-add-toCart .item-add-toCart .info-product {
+      width: 100%;
+      text-align: center; }
+  .pagebody-cart .lastLevelPay {
+    flex-direction: column;
+    height: auto; }
+    .pagebody-cart .lastLevelPay .PayBox {
+      width: 100%; }
+    .pagebody-cart .lastLevelPay .shop-box {
+      width: 100%;
+      padding: 0; }
+
+  footer .footer .footer-item:nth-child(1)::after,
+  footer .footer::after {
+    display: none !important; }
+
+  .pageBody-Consultation {
+    padding: 0rem 2rem; }
+    .pageBody-Consultation .Consultation-req .Consultation-req-grid {
+      flex-wrap: wrap; }
+    .pageBody-Consultation .Consultation-req .Consultation-req-item {
+      margin: 10px; }
+    .pageBody-Consultation .Consultation-date .box-date-grid {
+      width: 100%; }
+      .pageBody-Consultation .Consultation-date .box-date-grid .box-date-item .date-box-day-grid {
+        flex-direction: column; }
+
+  .pageBody-detail-product {
+    padding: 2rem 2rem;
+    display: flex;
+    flex-direction: column; }
+    .pageBody-detail-product .product-datil {
+      width: 100%; }
+    .pageBody-detail-product .shop-box {
+      width: 100%; }
+    .pageBody-detail-product .box-shop-detail div span {
+      text-align: center;
+      display: block; }
+    .pageBody-detail-product .box-shop-detail .select-price .LanguageLevel .radioInputs {
+      width: 100%; } }
 @media (min-width: 1024px) {
   .header {
     justify-content: space-evenly; }
@@ -2007,7 +2144,10 @@ footer {
   .pageBody-category .btns-changePage {
     flex-wrap: wrap;
     width: 100%;
-    float: none; } }
+    float: none; }
+
+  .pagebody-cart {
+    padding: 0rem 2rem; } }
 @media (max-width: 480px) {
   .header {
     padding: 10px 0; }
@@ -2154,7 +2294,25 @@ footer {
       flex-direction: column;
       flex-wrap: nowrap; }
   .pageBody-category .category-grid .category-item {
-    width: 100%; } }
+    width: 100%; }
+
+  .pagebody-cart {
+    padding: 0rem 1rem; }
+    .pagebody-cart .grid-grid-add-toCart {
+      flex-direction: column; }
+      .pagebody-cart .grid-grid-add-toCart .item-add-toCart {
+        margin-top: 2rem;
+        width: auto; }
+        .pagebody-cart .grid-grid-add-toCart .item-add-toCart .title-product {
+          width: 100%; }
+    .pagebody-cart .lastLevelPay .PayBox {
+      padding: 0; }
+      .pagebody-cart .lastLevelPay .PayBox .price {
+        font-size: 1rem; }
+      .pagebody-cart .lastLevelPay .PayBox .offerInput input {
+        width: auto; }
+      .pagebody-cart .lastLevelPay .PayBox .offerInput .submit-offer {
+        padding: 10px 1rem; } }
 @media (max-width: 375px) {
   .homePage-body .blog-homePage .blog-grid {
     flex-direction: column; }
