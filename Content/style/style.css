@@ -1249,34 +1249,137 @@ footer {
   padding: 2rem 4rem; }
   .pagebody-cart h2 {
     text-align: center; }
-  .pagebody-cart .grid-item-add-toCart {
+  .pagebody-cart .grid-grid-add-toCart {
     display: flex; }
-    .pagebody-cart .grid-item-add-toCart .item-add-toCart {
+    .pagebody-cart .grid-grid-add-toCart .item-add-toCart {
       display: flex;
       padding: 10px;
-      width: 25rem; }
-      .pagebody-cart .grid-item-add-toCart .item-add-toCart .img-item {
+      width: 25rem;
+      border: 1px solid #d6d6d6;
+      border-radius: 0.7rem;
+      margin: 0 10px; }
+      .pagebody-cart .grid-grid-add-toCart .item-add-toCart .img-item {
         width: 20%;
         display: inline-block; }
-      .pagebody-cart .grid-item-add-toCart .item-add-toCart .title-product {
+      .pagebody-cart .grid-grid-add-toCart .item-add-toCart .title-product {
         width: 79%;
         display: flex;
         flex-direction: column; }
-      .pagebody-cart .grid-item-add-toCart .item-add-toCart .info-product {
+      .pagebody-cart .grid-grid-add-toCart .item-add-toCart .info-product {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         padding-right: 10px; }
+        .pagebody-cart .grid-grid-add-toCart .item-add-toCart .info-product .price {
+          color: #007a33;
+          font-family: IRANYekanB; }
   .pagebody-cart .lastLevelPay {
     display: flex;
-    height: 30rem;
+    align-items: flex-start;
+    margin-top: 2rem;
     justify-content: center;
-    align-items: center; }
+    border-top: 2px solid #d6d6d6; }
     .pagebody-cart .lastLevelPay .PayBox {
       width: 70%;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      border: 1px solid #d6d6d6;
+      border-radius: 0.7rem;
+      margin: 20px 5px;
+      padding: 1rem;
+      height: 100%;
+      margin-bottom: 0; }
+      .pagebody-cart .lastLevelPay .PayBox .price {
+        font-family: IRANYekanB;
+        color: #007a33;
+        font-size: 1.5rem; }
+        .pagebody-cart .lastLevelPay .PayBox .price span:first-child {
+          color: black;
+          padding-left: 2rem; }
+      .pagebody-cart .lastLevelPay .PayBox .offerInput {
+        position: relative; }
+        .pagebody-cart .lastLevelPay .PayBox .offerInput input {
+          width: 20rem;
+          border: 1px solid #d6d6d6;
+          padding: 10px;
+          border-radius: 0.5rem; }
+        .pagebody-cart .lastLevelPay .PayBox .offerInput .submit-offer {
+          position: absolute;
+          border: none;
+          height: 99%;
+          border-radius: 0.5rem;
+          color: #fff;
+          background-color: #007a33;
+          padding: 10px 2rem;
+          transform: translateX(10px);
+          font-size: 1rem; }
+      .pagebody-cart .lastLevelPay .PayBox .select-bank .grid-select-back button {
+        width: 4rem;
+        height: 4rem;
+        border: none;
+        background-color: transparent; }
+        .pagebody-cart .lastLevelPay .PayBox .select-bank .grid-select-back button img {
+          padding: 2px; }
+        .pagebody-cart .lastLevelPay .PayBox .select-bank .grid-select-back button:hover {
+          border: 1px solid blue; }
+      .pagebody-cart .lastLevelPay .PayBox > div {
+        width: 100%;
+        text-align: center;
+        padding-top: 1rem; }
+      .pagebody-cart .lastLevelPay .PayBox .Confirmation,
+      .pagebody-cart .lastLevelPay .PayBox p {
+        margin-top: 1rem; }
+      .pagebody-cart .lastLevelPay .PayBox .Confirmation {
+        border: none;
+        background-color: #d82535;
+        color: #fff;
+        border-radius: 0.7rem;
+        padding: 0.7rem 5rem; }
     .pagebody-cart .lastLevelPay .shop-box {
-      width: 40%; }
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 1rem;
+      margin-top: 1rem;
+      height: 100%; }
+      .pagebody-cart .lastLevelPay .shop-box .box-shop-detail {
+        padding: 10px;
+        border: 1px solid #d6d6d6;
+        border-top: none;
+        text-align: center;
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        height: 100%; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail > div {
+          padding-top: 1rem; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .product-name span:first-child {
+          color: #d6d6d6; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .product-name .product-name-item {
+          display: block;
+          color: #007a33; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .price-product span:first-child {
+          color: #d6d6d6; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .price-product span {
+          color: #007a33; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .select-price .LanguageLevel {
+          justify-content: center !important; }
+          .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .select-price .LanguageLevel .radioInputs {
+            border: none !important; }
+        .pagebody-cart .lastLevelPay .shop-box .box-shop-detail .add-to-cart {
+          border: none;
+          background-color: #d82535;
+          color: #fff;
+          border-radius: 0.7rem;
+          padding: 1rem 3rem; }
+      .pagebody-cart .lastLevelPay .shop-box .title {
+        background-color: #007a33;
+        border-top-left-radius: 0.7rem;
+        border-top-right-radius: 0.7rem;
+        color: #fff;
+        padding: 10px 0; }
 
 .pageBody-Consultation {
   padding: 2rem 4rem; }
