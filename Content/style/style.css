@@ -253,7 +253,7 @@ body {
     text-align: justify; }
     .homePage-body .videos .text-video .title {
       color: #113e13;
-      font-family: IRANYekan-B; }
+      font-family: IRANYekanB; }
     .homePage-body .videos .text-video .description {
       font-size: 1.5rem; }
     .homePage-body .videos .text-video .see-more {
@@ -419,8 +419,9 @@ body {
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
-        width: 120px;
-        bottom: 4.5rem;
+        display: flex !important;
+        width: auto;
+        bottom: 6.5rem;
         display: inline-block;
         border-radius: 2rem;
         background-color: #d82535;
@@ -592,8 +593,14 @@ footer {
     border-radius: 0.7rem; }
     .pageBody-contactUs .contactUs .info-form {
       display: flex; }
+      .pageBody-contactUs .contactUs .info-form .map {
+        display: block; }
       .pageBody-contactUs .contactUs .info-form form {
         width: 70%; }
+        .pageBody-contactUs .contactUs .info-form form .age {
+          width: 93%; }
+        .pageBody-contactUs .contactUs .info-form form .LanguageLevel {
+          justify-content: center; }
         .pageBody-contactUs .contactUs .info-form form .send {
           border: none;
           background-color: #d82535;
@@ -1579,7 +1586,7 @@ footer {
     .header #openMenu {
       border: none;
       outline: none;
-      background: url(../../Imgs/Icon/Menuicon.png) center no-repeat;
+      background: url(../../Imgs/Icon/WhiteMenu.png) center no-repeat;
       background-size: cover;
       width: 2.5rem;
       height: 2.5rem; }
@@ -1650,7 +1657,7 @@ footer {
     .header-banner .header #openMenu {
       border: none;
       outline: none;
-      background: url(../../Imgs/Icon/Menuicon.png) center no-repeat;
+      background: url(../../Imgs/Icon/WhiteMenu.png) center no-repeat;
       background-size: cover;
       width: 2.5rem;
       height: 2.5rem; }
@@ -1751,6 +1758,16 @@ footer {
     footer .footer {
       flex-direction: column;
       background: linear-gradient(to left, #a190a5, #391840); }
+      footer .footer .footer-item:first-child {
+        position: relative; }
+        footer .footer .footer-item:first-child::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 6px;
+          background: #007a33;
+          background: linear-gradient(90deg, #007a33 0%, white 50%, #d82535 100%); }
       footer .footer .footer-item {
         padding-top: 4rem;
         width: 100%;
@@ -2003,6 +2020,13 @@ footer {
     padding: 0 4rem;
     max-width: 50%; } }
 @media (max-width: 768px) {
+  .header #openMenu,
+  .header .Logo,
+  .header .itemMenu {
+    width: 7rem; }
+  .header #openMenu {
+    background-size: 3rem; }
+
   .fix-background {
     height: 45rem; }
 
@@ -2055,7 +2079,7 @@ footer {
   .homePage-body .blog-homePage .blog-grid .blog-item {
     margin: 1rem 0.5rem; }
     .homePage-body .blog-homePage .blog-grid .blog-item .blog-date {
-      width: 60px;
+      width: auto;
       font-size: 9px;
       bottom: 6.5rem;
       padding-right: 2.5rem;
@@ -2150,7 +2174,20 @@ footer {
     padding: 0rem 2rem; } }
 @media (max-width: 480px) {
   .header {
-    padding: 10px 0; }
+    padding: 10px; }
+    .header #openMenu {
+      background-size: 2.5rem; }
+    .header .Logo {
+      width: 6rem;
+      margin-top: 3px; }
+      .header .Logo a {
+        display: block;
+        width: 100%; }
+        .header .Logo a img {
+          width: 100%; }
+    .header .itemMenu > div {
+      padding: 11px;
+      background-size: 25px !important; }
     .header .Logo img {
       width: 80%; }
 
@@ -2180,6 +2217,8 @@ footer {
   .homePage-body .Students .audio-Students .audio {
     width: 100%;
     height: 6rem; }
+    .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(1), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(2), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(3), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(4), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(5), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(6) {
+      display: none; }
   .homePage-body .Students .audio-Students .user {
     display: none; }
   .homePage-body .Students .audio-Students .user-3 {
@@ -2298,10 +2337,13 @@ footer {
 
   .pagebody-cart {
     padding: 0rem 1rem; }
+    .pagebody-cart .title-pageBody {
+      padding-top: 1rem;
+      padding-bottom: 1rem; }
     .pagebody-cart .grid-grid-add-toCart {
       flex-direction: column; }
       .pagebody-cart .grid-grid-add-toCart .item-add-toCart {
-        margin-top: 2rem;
+        margin-top: 1rem;
         width: auto; }
         .pagebody-cart .grid-grid-add-toCart .item-add-toCart .title-product {
           width: 100%; }
@@ -2312,7 +2354,27 @@ footer {
       .pagebody-cart .lastLevelPay .PayBox .offerInput input {
         width: auto; }
       .pagebody-cart .lastLevelPay .PayBox .offerInput .submit-offer {
-        padding: 10px 1rem; } }
+        padding: 10px 1rem; }
+
+  .pageBody-detail-product {
+    padding: 2rem 1rem; }
+    .pageBody-detail-product .product-datil {
+      width: 100%; }
+      .pageBody-detail-product .product-datil .play-video .play-video {
+        top: 15%;
+        width: 30%; }
+        .pageBody-detail-product .product-datil .play-video .play-video svg {
+          width: 100%; }
+
+  .pageBody-contactUs .title {
+    padding: 1rem; }
+  .pageBody-contactUs .title-form {
+    text-align: center; }
+  .pageBody-contactUs .info-contactUs span {
+    width: 100% !important;
+    text-align: center; }
+    .pageBody-contactUs .info-contactUs span::after {
+      right: 1rem !important; } }
 @media (max-width: 375px) {
   .homePage-body .blog-homePage .blog-grid {
     flex-direction: column; }
