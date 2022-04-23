@@ -7,6 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="Content/style/style.css" />
   <title>JoinUs</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
 </head>
 
 <body>
@@ -224,8 +229,20 @@
       </div>
       <div class="video-player">
         <img src="Imgs/Video/CoverVideo.png" alt="" />
-        <button class="See-video"></button>
+        <button class="See-video" onclick="lightbox_open()" id="play"></button>
       </div>
+      <div id="light">
+        <div class="orginal-video">
+          <a class="boxclose" id="boxclose" onclick="lightbox_close();" href="#play"></a>
+          <video id="VisaChipCardVideo" width="600" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <!--Browser does not support <video> tag -->
+          </video>
+        </div>
+      </div>
+      
+      <div id="fade" onClick="lightbox_close();"></div>
+    
     </section>
 
     <section class="products">
@@ -342,8 +359,8 @@
       </div>
 
       <div class="audio-Students">
-        <button class="right next nextBtn" onclick="plusSlides(1)">click</button>
-        <button class="left prev prevBtn" onclick="plusSlides(-1)" style="float: left;">click</button>
+        <!-- <button class="right next nextBtn slide-next">click</button> -->
+        <!-- <button class="left prev prevBtn slide-prev" style="float: left;">click</button> -->
         <div class="user user-1">
           <img src="Imgs/students/student1.png" alt="" />
         </div>
@@ -357,10 +374,10 @@
           <img src="Imgs/students/student4.png" alt="" />
         </div>
         <section class="audio">
-          <section class="voice-grid">
+          <section class="voice-grid slider-two">
 
 
-            <div class="voice">
+            <div class="voice slide slide-1">
               <video>
                 <source src="./audio/1.mp3" />
               </video>
@@ -398,7 +415,7 @@
               </button>
             </div>
 
-            <div class="voice">
+            <div class="voice slide slide-2">
               <video>
                 <source src="./audio/1.mp3" />
               </video>
@@ -436,7 +453,7 @@
               </button>
             </div>
 
-            <div class="voice">
+            <div class="voice slide slide-3">
               <video>
                 <source src="./audio/1.mp3" />
               </video>
@@ -616,6 +633,33 @@
   
   <script src="./Content/Scripts/App.js">
 
+  </script>
+  <script src="Content/Scripts/video.js"></script>
+  <script>
+        $(document).ready(function () {
+        // slider two
+        $('.slider-two').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            // autoplay: true,
+            fade: true,
+            autoplaySpeed: 2000,
+            dots: true,
+            // arrows: true
+        });
+
+        $('.slide-prev').click(function (e) {
+            //e.preventDefault(); 
+            $('.slider-two').slick('slickPrev');
+        });
+
+        $('.slide-next').click(function (e) {
+            //e.preventDefault(); 
+            $('.slider-two').slick('slickNext');
+        });
+
+
+    });
   </script>
 </body>
 

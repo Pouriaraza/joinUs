@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: IRANYekan;
   src: url(../../Fonts/IRANYekanRegular.ttf); }
@@ -65,8 +66,8 @@ body {
   height: 52rem;
   background: url(../../Imgs/BannerHomePage/BnnarHomePage.png) center no-repeat;
   background-size: cover;
-  left: 50%;
-  transform: translateX(-50%); }
+  left: 50% !important;
+  transform: translateX(-50%) !important; }
   .PurpleBackground img {
     object-fit: cover;
     height: 100%; }
@@ -207,7 +208,7 @@ body {
       height: 15rem;
       box-shadow: 0px 1.51923px 18.2308px rgba(0, 0, 0, 0.12);
       border-radius: 6.07692px;
-      margin: 10px;
+      margin: 15px;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -244,7 +245,59 @@ body {
   margin-top: 5rem;
   max-width: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  position: relative; }
+  .homePage-body .videos #fade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: 0.8;
+    filter: alpha(opacity=80); }
+  .homePage-body .videos #light {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999; }
+    .homePage-body .videos #light .orginal-video {
+      width: 80%;
+      margin: auto; }
+      .homePage-body .videos #light .orginal-video video {
+        z-index: 1002;
+        width: 100%;
+        overflow: visible;
+        display: block;
+        margin: auto; }
+  .homePage-body .videos #boxclose {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+    background: #222222;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;
+    position: absolute;
+    z-index: 1002;
+    opacity: 0.9; }
+  .homePage-body .videos .boxclose:before {
+    content: "×"; }
+  .homePage-body .videos #fade:hover ~ #boxclose {
+    display: none; }
+  .homePage-body .videos .test:hover ~ .test2 {
+    display: none; }
   .homePage-body .videos .text-video {
     display: flex;
     flex-direction: column;
@@ -294,7 +347,8 @@ body {
         transition: all 0.5s;
         cursor: pointer; }
         .homePage-body .products .products-description .product-grid .product-item .description {
-          display: none; }
+          display: none;
+          text-align: justify; }
         .homePage-body .products .products-description .product-grid .product-item:hover {
           background-color: #2c0e37;
           transition: all 0.5s;
@@ -328,47 +382,60 @@ body {
   .homePage-body .Students .audio-Students {
     max-width: 100%;
     padding: 15rem 4rem; }
-    .homePage-body .Students .audio-Students .audio {
-      width: 39.5rem;
+    .homePage-body .Students .audio-Students .slick-next,
+    .homePage-body .Students .audio-Students .slick-prev {
+      font-size: 0;
+      padding: 2rem;
+      background: url(../../Imgs/Icon/arrow-circle-right.png) center no-repeat;
+      border: none; }
+      .homePage-body .Students .audio-Students .slick-next::before,
+      .homePage-body .Students .audio-Students .slick-prev::before {
+        display: none; }
+    .homePage-body .Students .audio-Students .slick-prev {
+      transform: rotate(180deg);
+      left: 20rem;
+      top: 3rem; }
+    .homePage-body .Students .audio-Students .slick-next {
+      right: 20rem;
+      top: 4rem; }
+    .homePage-body .Students .audio-Students .audio .voice {
+      width: 40rem !important;
       height: 10rem;
-      margin: auto;
-      overflow: hidden; }
-      .homePage-body .Students .audio-Students .audio .voice-grid {
-        width: 100%;
-        transition: all 0.4s; }
-      .homePage-body .Students .audio-Students .audio .voice {
-        width: 100%;
+      left: 50% !important;
+      transform: translateX(-50%);
+      top: 0 !important;
+      background-color: #2c0e37;
+      border-radius: 1rem;
+      padding: 0 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1; }
+      .homePage-body .Students .audio-Students .audio .voice video {
+        display: none; }
+      .homePage-body .Students .audio-Students .audio .voice .pause svg:first-child {
+        display: none !important; }
+      .homePage-body .Students .audio-Students .audio .voice .pause svg:last-child {
+        display: inline-block !important; }
+      .homePage-body .Students .audio-Students .audio .voice button {
+        background-color: transparent;
+        border: none;
+        overflow: hidden; }
+        .homePage-body .Students .audio-Students .audio .voice button svg {
+          fill: #fff; }
+    .homePage-body .Students .audio-Students .audio .bars {
+      height: 10rem;
+      display: flex;
+      align-items: center; }
+      .homePage-body .Students .audio-Students .audio .bars .bar {
+        width: 8px;
+        min-height: 1rem;
         height: 100%;
-        margin: auto 0;
-        background-color: #2c0e37;
+        max-height: 1rem;
+        background-color: white;
         border-radius: 1rem;
-        padding: 0 1rem;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        .homePage-body .Students .audio-Students .audio .voice .pause svg:first-child {
-          display: none !important; }
-        .homePage-body .Students .audio-Students .audio .voice .pause svg:last-child {
-          display: inline-block !important; }
-        .homePage-body .Students .audio-Students .audio .voice button {
-          background-color: transparent;
-          border: none;
-          overflow: hidden; }
-          .homePage-body .Students .audio-Students .audio .voice button svg {
-            fill: #fff; }
-      .homePage-body .Students .audio-Students .audio .bars {
-        height: 10rem;
-        display: flex;
-        align-items: center; }
-        .homePage-body .Students .audio-Students .audio .bars .bar {
-          width: 8px;
-          min-height: 1rem;
-          height: 100%;
-          max-height: 1rem;
-          background-color: white;
-          border-radius: 1rem;
-          margin: 0.5rem;
-          transition: 1s; }
+        margin: 0.5rem;
+        transition: 1s; }
     .homePage-body .Students .audio-Students .user {
       width: 60px;
       height: 60px;
@@ -384,8 +451,8 @@ body {
       width: 90px;
       height: 90px;
       top: 8rem;
-      left: 50%;
-      transform: translateX(-50%); }
+      left: 50% !important;
+      transform: translateX(-50%) !important; }
     .homePage-body .Students .audio-Students .user-4 {
       width: 70px;
       height: 70px;
@@ -401,6 +468,11 @@ body {
       top: 17rem; }
     .homePage-body .Students .audio-Students .user-7 {
       left: 12rem; }
+  .homePage-body .Students .slick-track {
+    width: 100% !important;
+    height: 12rem; }
+    .homePage-body .Students .slick-track .slide {
+      position: absolute !important; }
 .homePage-body .blog-homePage {
   max-width: 100%; }
   .homePage-body .blog-homePage .title {
@@ -416,8 +488,8 @@ body {
       position: relative; }
       .homePage-body .blog-homePage .blog-grid .blog-item .blog-date {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 50% !important;
+        transform: translateX(-50%) !important;
         text-align: center;
         display: flex !important;
         width: auto;
@@ -466,15 +538,14 @@ body {
     .homePage-body .support-team .support-grid .support {
       box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.12);
       border-radius: 8px;
-      text-align: center;
-      padding-bottom: 4rem; }
+      text-align: center; }
       .homePage-body .support-team .support-grid .support .profile-support {
         width: 100%; }
       .homePage-body .support-team .support-grid .support .name-support {
         font-family: IRANYekanB;
-        padding-bottom: 5px; }
-.homePage-body video {
-  display: none; }
+        padding-bottom: 1rem; }
+      .homePage-body .support-team .support-grid .support .grade {
+        padding-bottom: 1rem; }
 
 .byFaramouj {
   width: 100%;
@@ -586,6 +657,7 @@ footer {
   max-width: 90%;
   margin: auto; }
   .pageBody-contactUs .title {
+    margin: 1rem 0;
     text-align: center; }
   .pageBody-contactUs .contactUs {
     padding: 5rem;
@@ -598,9 +670,17 @@ footer {
       .pageBody-contactUs .contactUs .info-form form {
         width: 70%; }
         .pageBody-contactUs .contactUs .info-form form .age {
-          width: 93%; }
+          width: 45%;
+          display: inline-block; }
         .pageBody-contactUs .contactUs .info-form form .LanguageLevel {
-          justify-content: center; }
+          width: 45% !important;
+          display: inline-block;
+          justify-content: center;
+          margin: 10px; }
+          .pageBody-contactUs .contactUs .info-form form .LanguageLevel .container span {
+            margin-right: 6px !important; }
+          .pageBody-contactUs .contactUs .info-form form .LanguageLevel .radioInputs {
+            width: 100% !important; }
         .pageBody-contactUs .contactUs .info-form form .send {
           border: none;
           background-color: #d82535;
@@ -611,7 +691,9 @@ footer {
           cursor: pointer;
           font-family: IRANYekanB; }
         .pageBody-contactUs .contactUs .info-form form .inputs {
-          width: 100%; }
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap; }
         .pageBody-contactUs .contactUs .info-form form input {
           border: 1px solid #d6d6d6;
           padding: 10px;
@@ -625,7 +707,7 @@ footer {
           border: 1px solid #d6d6d6;
           padding: 10px;
           border-radius: 0.4rem;
-          width: 94%;
+          width: 93%;
           height: 10rem;
           display: inline-block;
           margin: 10px;
@@ -774,7 +856,8 @@ footer {
       font-family: IRANYekanB;
       padding: 1rem; }
       .pageBody-abouUs .aboutUs-box .description-about .p2-about {
-        padding-top: 2rem; }
+        padding-top: 2rem;
+        text-align: justify; }
     .pageBody-abouUs .aboutUs-box .img-about {
       width: 25%; }
       .pageBody-abouUs .aboutUs-box .img-about img {
@@ -1259,8 +1342,8 @@ footer {
         border-radius: 0.7rem; }
       .pageBody-detail-product .product-datil .play-video button {
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 50% !important;
+        transform: translateX(-50%) !important;
         top: 35%;
         color: white; }
   .pageBody-detail-product .shop-box {
@@ -2002,8 +2085,8 @@ footer {
   .homePage-body .category-HomePage .category-grid {
     width: 80%; }
     .homePage-body .category-HomePage .category-grid .category-item {
-      width: 11rem;
-      height: 11rem; }
+      width: 13rem;
+      height: 13rem; }
 
   .description-category {
     width: 20% !important; } }
@@ -2068,13 +2151,24 @@ footer {
       width: 35%;
       margin-top: 1rem; }
 
-  .homePage-body .Students .audio-Students .user-6,
-  .homePage-body .Students .audio-Students .user-5 {
-    display: none; }
-  .homePage-body .Students .audio-Students .user-1 {
-    top: 7rem; }
-  .homePage-body .Students .audio-Students .audio {
-    width: 90%; }
+  .homePage-body .Students .audio-Students {
+    padding: 15rem 2rem; }
+    .homePage-body .Students .audio-Students .audio .voice {
+      width: 30rem !important; }
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(1) .bar:nth-child(2),
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(3),
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(4),
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(5),
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(6),
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(10) {
+        display: none; }
+    .homePage-body .Students .audio-Students .audio-Students .user-6,
+    .homePage-body .Students .audio-Students .audio-Students .user-5 {
+      display: none; }
+    .homePage-body .Students .audio-Students .audio-Students .user-1 {
+      top: 7rem; }
+    .homePage-body .Students .audio-Students .audio-Students .audio {
+      width: 100%; }
 
   .homePage-body .blog-homePage .blog-grid .blog-item {
     margin: 1rem 0.5rem; }
@@ -2214,11 +2308,20 @@ footer {
       padding: 1rem 1rem !important;
       margin: 10px 10px; }
 
+  .homePage-body .Students .audio-Students .slick-next {
+    top: -2rem;
+    right: 0; }
+  .homePage-body .Students .audio-Students .slick-prev {
+    top: -4rem;
+    left: 0; }
   .homePage-body .Students .audio-Students .audio {
     width: 100%;
     height: 6rem; }
-    .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(1), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(2), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(3), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(4), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(5), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(6) {
-      display: none; }
+    .homePage-body .Students .audio-Students .audio .voice {
+      width: 100% !important;
+      height: 7rem !important; }
+      .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(11), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(12), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(13), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(14), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(15), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(16), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(17), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(18), .homePage-body .Students .audio-Students .audio .voice .bars .bar:nth-child(19) {
+        display: none; }
   .homePage-body .Students .audio-Students .user {
     display: none; }
   .homePage-body .Students .audio-Students .user-3 {

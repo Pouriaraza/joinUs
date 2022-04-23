@@ -1,13 +1,4 @@
 
-
-
-
-
-
-
-
-
-
 function openMenu() {
   document.querySelector(".menu").classList.add("openMenu");
 }
@@ -77,60 +68,61 @@ left.addEventListener("click", (click = () => {
 
 
 
-const voiceGrid = [...document.querySelectorAll('.audio')];
+// const voiceGrid = [...document.querySelectorAll('.audio')];
 
-const nextBtn = [...document.querySelectorAll('.nextBtn')];
-const prevBtn = [...document.querySelectorAll('.prevBtn')];
-
-
-voiceGrid.forEach((item, i) => {
-  let domasion = item.getBoundingClientRect();
-  let width = domasion.width;
+// const nextBtn = [...document.querySelectorAll('.nextBtn')];
+// const prevBtn = [...document.querySelectorAll('.prevBtn')];
 
 
-  prevBtn[i].addEventListener('click', () => {
-    item.scrollLeft += width;
-    console.log("prevBtn");
-  })
+// voiceGrid.forEach((item, i) => {
+//   let domasion = item.getBoundingClientRect();
+//   let width = domasion.width;
 
 
-  nextBtn[i].addEventListener('click', () => {
-    item.scrollLeft -= width;
-    console.log("nextBtn");
-
-  })
-
-})
+//   prevBtn[i].addEventListener('click', () => {
+//     item.scrollLeft += width;
+//     // console.log("prevBtn");
+//   })
 
 
-let slideIndex = 1;
-showSlides(slideIndex);
+//   nextBtn[i].addEventListener('click', () => {
+//     item.scrollLeft -= width;
+//     // console.log("nextBtn");
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+//   })
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+// })
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("voice");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
 
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].className += " active";
+// let slideIndex = 1;
+// showSlides(slideIndex);
 
-}
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+// function showSlides(n) {
+//   let i;
+//   let slides = document.getElementsByClassName("voice");
+//   let dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) { slideIndex = 1 }
+//   if (n < 1) { slideIndex = slides.length }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].classList.display = "none";
+
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex - 1].style.display = "flex";
+//   slides[slideIndex - 1].style.display = "flex";
+//   dots[slideIndex - 1].className += " active";
+//   // slides[slideIndex - 1].classList.add("active");
+// }
 
 
 
@@ -153,8 +145,6 @@ function showSlides(n) {
 //   document.querySelector(".dashboard-items").classList.add("openProfile");
 //   console.log("ok");
 // });
-
-
 
 
 

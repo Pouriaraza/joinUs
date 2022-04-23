@@ -29,8 +29,8 @@ $gray: #f1f1f1;
 $dark-gray: #676767;
 $border-gray: #d6d6d6;
 @mixin centerPosition {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }
 .active-item {
     background-color: $white !important;
@@ -273,7 +273,7 @@ body {
                 height: 15rem;
                 box-shadow: 0px 1.51923px 18.2308px rgba(0, 0, 0, 0.12);
                 border-radius: 6.07692px;
-                margin: 10px;
+                margin: 15px;
                 padding: 1rem;
                 display: flex;
                 flex-direction: column;
@@ -323,6 +323,74 @@ body {
         max-width: 100%;
         display: flex;
         justify-content: space-between;
+        position: relative;
+        #fade {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+        }
+
+        #light {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            .orginal-video {
+                width: 80%;
+                margin: auto;
+                video {
+                    // position: absolute;
+                    z-index: 1002;
+                    width: 100%;
+                    overflow: visible;
+                    display: block;
+                    margin: auto;
+                    // left: 50%;
+                    // top: 50%;
+                }
+            }
+        }
+
+        #boxclose {
+            float: right;
+            cursor: pointer;
+            color: #fff;
+            border: 1px solid #aeaeae;
+            border-radius: 3px;
+            background: #222222;
+            font-size: 31px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 0px;
+            padding: 11px 3px;
+            position: absolute;
+            z-index: 1002;
+            opacity: 0.9;
+        }
+
+        .boxclose:before {
+            content: "×";
+        }
+
+        #fade:hover ~ #boxclose {
+            display: none;
+        }
+
+        .test:hover ~ .test2 {
+            display: none;
+        }
         .text-video {
             display: flex;
             flex-direction: column;
@@ -383,6 +451,7 @@ body {
                     cursor: pointer;
                     .description {
                         display: none;
+                        text-align: justify;
                     }
                     &:hover {
                         background-color: $Purple;
@@ -431,30 +500,56 @@ body {
         .audio-Students {
             max-width: 100%;
             padding: 15rem 4rem;
-            .audio {
-                width: 39.5rem;
-                height: 10rem;
-                margin: auto;
-                overflow: hidden;
-                // position: relative;
-                .voice-grid {
-                    width: 100%;
-                    // height: 11rem;
-                    // display: flex;
-                    // position: absolute;
-                    transition: all 0.4s;
-                    // left: 0;
+            .slick-next,
+            .slick-prev {
+                font-size: 0;
+                padding: 2rem;
+                background: url(../../Imgs/Icon/arrow-circle-right.png) center no-repeat;
+                &::before {
+                    display: none;
                 }
+                border: none;
+            }
+            .slick-prev {
+                transform: rotate(180deg);
+                left: 20rem;
+                top: 3rem;
+            }
+            .slick-next {
+                right: 20rem;
+                top: 4rem;
+            }
+            .audio {
+                // width: 39.5rem;
+                // height: 10rem;
+                // margin: auto;
+                // overflow: hidden;
+                // position: relative;
+                // .voice-grid {
+                //     width: 100%;
+                //     // height: 11rem;
+                //     display: flex;
+                //     justify-content: center;
+                //     // position: absolute;
+                //     transition: all 0.4s;
+                //     // left: 0;
+                // }
                 .voice {
-                    width: 100%;
-                    height: 100%;
-                    margin: auto 0;
+                    width: 40rem !important;
+                    height: 10rem;
+                    left: 50% !important;
+                    transform: translateX(-50%);
+                    top: 0 !important;
                     background-color: $Purple;
                     border-radius: 1rem;
                     padding: 0 1rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    z-index: -1;
+                    video {
+                        display: none;
+                    }
                     .pause {
                         svg:first-child {
                             display: none !important;
@@ -528,6 +623,13 @@ body {
             }
             .user-7 {
                 left: 12rem;
+            }
+        }
+        .slick-track {
+            width: 100% !important;
+            height: 12rem;
+            .slide {
+                position: absolute !important;
             }
         }
     }
@@ -609,20 +711,18 @@ body {
                 box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.12);
                 border-radius: 8px;
                 text-align: center;
-                padding-bottom: 4rem;
                 .profile-support {
                     width: 100%;
                 }
                 .name-support {
                     font-family: $bold;
-                    padding-bottom: 5px;
+                    padding-bottom: 1rem;
+                }
+                .grade {
+                    padding-bottom: 1rem;
                 }
             }
         }
-    }
-
-    video {
-        display: none;
     }
 }
 
@@ -755,6 +855,7 @@ footer {
     max-width: 90%;
     margin: auto;
     .title {
+        margin: 1rem 0;
         text-align: center;
     }
     .contactUs {
@@ -772,10 +873,21 @@ footer {
             form {
                 width: 70%;
                 .age {
-                    width: 93%;
+                    width: 45%;
+                    display: inline-block;
                 }
+
                 .LanguageLevel {
+                    width: 45% !important;
+                    display: inline-block;
                     justify-content: center;
+                    margin: 10px;
+                    .container span{
+                        margin-right: 6px !important;
+                    }
+                    .radioInputs{
+                        width: 100% !important;
+                    }
                 }
                 .send {
                     border: none;
@@ -789,6 +901,8 @@ footer {
                 }
                 .inputs {
                     width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
                 }
                 input {
                     border: 1px solid #d6d6d6;
@@ -806,7 +920,7 @@ footer {
                     border: 1px solid #d6d6d6;
                     padding: 10px;
                     border-radius: 0.4rem;
-                    width: 94%;
+                    width: 93%;
                     height: 10rem;
                     display: inline-block;
                     margin: 10px;
@@ -989,6 +1103,7 @@ footer {
             padding: 1rem;
             .p2-about {
                 padding-top: 2rem;
+                text-align: justify;
             }
         }
 
@@ -2675,8 +2790,8 @@ footer {
     .homePage-body .category-HomePage .category-grid {
         width: 80%;
         .category-item {
-            width: 11rem;
-            height: 11rem;
+            width: 13rem;
+            height: 13rem;
         }
     }
     .description-category {
@@ -2781,15 +2896,31 @@ footer {
 
     .homePage-body .Students {
         .audio-Students {
-            .user-6,
-            .user-5 {
-                display: none;
+            padding: 15rem 2rem;
+            .audio .voice {
+                width: 30rem !important;
+                .bars {
+                    .bar:nth-child(1) .bar:nth-child(2),
+                    .bar:nth-child(3),
+                    .bar:nth-child(4),
+                    .bar:nth-child(5),
+                    .bar:nth-child(6),
+                    .bar:nth-child(10) {
+                        display: none;
+                    }
+                }
             }
-            .user-1 {
-                top: 7rem;
-            }
-            .audio {
-                width: 90%;
+            .audio-Students {
+                .user-6,
+                .user-5 {
+                    display: none;
+                }
+                .user-1 {
+                    top: 7rem;
+                }
+                .audio {
+                    width: 100%;
+                }
             }
         }
     }
@@ -3024,6 +3155,17 @@ footer {
             }
         }
     }
+
+    // #light{
+    //         // transform: translate(-50% , -50%);
+    //         // .boxclose{
+    //         //     right: 83px;
+    //         // }
+    //     video{
+    //         margin: auto;
+    //         display: block;
+    //     }
+    // }
 }
 
 @media (max-width: 480px) {
@@ -3056,6 +3198,7 @@ footer {
             padding: 1rem 1rem;
         }
     }
+
     .description-banner {
         h2 {
             font-size: 1rem;
@@ -3065,12 +3208,15 @@ footer {
             font-size: 10px;
         }
     }
+
     .fix-background {
         height: 35rem;
     }
+
     .homePage-body .videos .video-player img {
         width: 18rem;
     }
+
     .products {
         padding: 0;
         .description-full {
@@ -3080,19 +3226,35 @@ footer {
             margin: 10px 10px;
         }
     }
+
     .homePage-body .Students {
         .audio-Students {
+            .slick-next{
+                top: -2rem;
+                right: 0;
+            }
+            .slick-prev {
+                top: -4rem;
+                left: 0;
+            }
             .audio {
                 width: 100%;
                 height: 6rem;
-                .voice .bars .bar{
-                    &:nth-child(1),
-                    &:nth-child(2),
-                    &:nth-child(3),
-                    &:nth-child(4),
-                    &:nth-child(5),
-                    &:nth-child(6) {
-                        display: none;
+                .voice {
+                    width: 100% !important;
+                    height: 7rem !important;
+                    .bars .bar {
+                        &:nth-child(11),
+                        &:nth-child(12),
+                        &:nth-child(13),
+                        &:nth-child(14),
+                        &:nth-child(15),
+                        &:nth-child(16),
+                        &:nth-child(17),
+                        &:nth-child(18),
+                        &:nth-child(19) {
+                            display: none;
+                        }
                     }
                 }
             }
@@ -3104,6 +3266,7 @@ footer {
             }
         }
     }
+
     .homePage-body .blog-homePage {
         .blog-grid {
             .blog-item {
@@ -3130,12 +3293,14 @@ footer {
             }
         }
     }
+
     .see-all {
         margin-top: 2rem !important;
         a {
             margin: 5px 1.4rem !important;
         }
     }
+
     .pageBody-abouUs {
         .aboutUs-box {
             .info-about {
